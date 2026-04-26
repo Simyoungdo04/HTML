@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header_3</title>
+    <style>
+        body{
+            background-color: #1a1a1a;
+        }
+        div{
+            border: 1px solid red;
+        }
+        #header_3{
+            width: 240px;
+            height: 140px;
+        }
+
+        /*===========================*/
+
+        #header_3{
+            display: flex;
+            align-items: start;
+            justify-content: flex-end;
+        }
+
+        #signup{
+            margin: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        #signup>a{
+            color: #bebebe;
+            text-decoration: none;
+
+            &:hover{
+                color: #3939ff;
+                font-weight: 600;
+            }
+        }
+
+        #login{
+            display: flex;
+            align-items: center;
+        }
+
+        #login>button{
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 18px;
+            background-color: #bebebe;
+            font-weight: 600;
+
+            &:hover{
+                background-color: #eeeeee;
+                color: #3939ff;
+                font-weight: 800;
+                transition: box-shadow 100ms;
+            }
+
+            &:active{
+                background-color: #bebebe;
+                color: #2f2fd4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header_3">
+        <div id="signup">
+            <a href="#">회원가입</a>
+        </div>
+        <div id="login">
+            <button>로그인</button>
+        </div>
+    </div>
+</body>
+</html>

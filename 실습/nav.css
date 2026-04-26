@@ -1,0 +1,30 @@
+nav{
+    border-top: 1px solid #5c5c5c;
+    border-bottom: 1px solid #5c5c5c;
+    background-color: #202020;
+}
+
+#navbar{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar>li{
+    padding : 0 50px;
+}
+
+#navbar>li>a{
+    font-weight: 600;
+    color: #bebebe;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:hover{
+        color: #3939ff;
+    }
+}

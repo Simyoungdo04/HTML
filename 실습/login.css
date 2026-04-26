@@ -1,0 +1,46 @@
+#header_3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#signup{
+    margin: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#signup>a{
+    color: #bebebe;
+    text-decoration: none;
+
+    &:hover{
+        color: #3939ff;
+        font-weight: 600;
+    }
+}
+
+#login{
+    display: flex;
+    align-items: center;
+}
+
+#login>button{
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 18px;
+    background-color: #bebebe;
+    font-weight: 600;
+
+    &:hover{
+        background-color: #eeeeee;
+        color: #3939ff;
+        font-weight: 800;
+        transition: box-shadow 100ms;
+    }
+
+    &:active{
+        background-color: #bebebe;
+        color: #2f2fd4;
+    }
+}

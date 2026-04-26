@@ -30,10 +30,10 @@
             flex: 1.5;
         }
         #header_2{
-            flex: 6.5; 
+            flex: 7; 
         }
         #header_3{
-            flex: 2;
+            flex: 1.5;
         }
 
         nav{
@@ -56,70 +56,64 @@
 
         footer{
             flex: 2;
-            display: flex;
-        }
-        #footer_logo{
-            flex: 1;
-        }
-        #footer_wrap{
-            flex: 9;
-            display: flex;
-        }
-        #footer_1{
-            flex: 1.5;
-        }
-        #footer_2{
-            flex: 8.5;
         }
     </style>
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="logo.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="pixelCat.css">
 </head>
 <body>
     <div id="wrap">
         <header>
-            <div id="header_1"></div>
-            <div id="header_2">
-                <a href="#" id="logo">
-                    <span id="open">
-                        {
-                    </span>
-                    Cat
-                    <span id="close">
-                        }
-                    </span>
+            <div id="header_1">
+                <a href="#">
+                    <img id="pixelCat" src="img/pixelCat.png" alt="pixelCat">
                 </a>
             </div>
-            <div id="header_3"></div>
+            <div id="header_2">
+                <a href="#" id="logo">
+                    <span id="open">{</span>Cat<span id="close">}</span>
+                </a>
+            </div>
+            <div id="header_3">
+                <div id="signup">
+                    <a href="#">회원가입</a>
+                </div>
+                <div id="login">
+                    <button type="button">로그인</button>
+                </div>
+            </div>
         </header>
-        <nav></nav>
+        <nav>
+            <ul id="navbar">
+                <li><a href="#">프로필</a></li>
+                <li><a href="#">고양이 뉴스</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">고양이 용품</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </nav>
         <main>
             <div id="content_1"></div>
             <div id="content_2"></div>
             <div id="content_3"></div>
         </main>
         <footer>
-            <div id="footer_logo">
+            <div id="footer_1">
                 <a href="#">
-                    <span id="open">
-                        {
-                    </span>
-                    Cat
-                    <span id="close">
-                        }
-                    </span>
+                    <span id="open">{</span>Cat<span id="close">}</span>
                 </a>
             </div>
-            <div id="footer_wrap">
-                <div id="footer_1">
-                    <p>© 2026 0DO</p>
-                </div>
-                <div id="footer_2">
+            <div id="footer_2">
+                <div id="footer_info">
                     <a href="#">이용약관</a>
                     <a href="#">개인정보처리방침</a>
                     <a href="#">문의하기</a>
                     <a href="#">도움</a>
                 </div>
+                <span id="footer_license">© 2026 0DO</span>
             </div>
         </footer>
     </div>

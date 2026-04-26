@@ -8,10 +8,14 @@
     text-decoration: none;
     color:  #bebebe;
     font-weight: 800;
-    font-size: 30px;
-    letter-spacing: 2px;
+    font-size: 45px;
+    letter-spacing: 4px;
 }
 
 #close, #open{
     color: #3939ff;
+}
+
+#logo:hover{
+    color: #ffffff;
 }

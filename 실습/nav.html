@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <style>
+        body{
+            background-color: #1a1a1a;
+        }
+        nav, ul, li{
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 1200px;
+            height: 40px;
+        }
+
+        /*======================*/
+
+        nav{
+            border-top: 1px solid #5c5c5c;
+            border-bottom: 1px solid #5c5c5c;
+        }
+
+        #navbar{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navbar>li{
+            padding : 0 50px;
+        }
+
+        #navbar>li>a{
+            font-weight: 600;
+            color: #bebebe;
+            text-decoration: none;
+            letter-spacing: 1px;
+
+            &:hover{
+                color: #3939ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="navbar">
+            <li><a href="#">프로필</a></li>
+            <li><a href="#">고양이 뉴스</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">고양이 용품</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

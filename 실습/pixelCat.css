@@ -1,0 +1,7 @@
+#pixelCat{
+    width: 128px;
+    image-rendering: pixelated;
+    position: relative;
+    top: 63px;
+    left: 25px;
+}
