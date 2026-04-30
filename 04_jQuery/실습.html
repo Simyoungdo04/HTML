@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <!--
+        실습 겸 숙제
+        
+        API 3개 찾아서 (내맘대로)
+
+        카페 / 부산맛집 구현한 것처럼
+
+        버튼 클릭 시 정보를 제공하는 페이지 3개 만들기
+    -->
+
+    <!--무료 와이파이 찾기-->
+    <button onclick="prev();" class="btn btn-danger"
+            style="margin: 10px;">이전</button>
+    <button onclick="next();" class="btn btn-outline-primary"
+            style="margin: 10px;">무료 와이파이 보기</button>
+    <div id="wifi"></div>
+
+    <script>
+        let page = 1;
+        function next(){
+            page++;
+            wifi(page);
+        };
+        function prev(){
+            if(page > 1){
+                page--;
+                wifi(page);
+            }
+            
+        };
+
+        $(function(){
+            wifi();
+        });
+        function wifi(page){
+            if(!page) page = 1;
+            $.ajax({
+                url : 'https://apis.data.go.kr/1741000/free_wifi_info/info?serviceKey=0683a518f80264d6ed4fb9185d5731cc8000a640948615a332afcb56c55176b9&numOfRows=10&returnType=json&pageNo=' + page,
+                success : e => {
+                    // console.log(e.response.body.items.item);
+                    const items = e.response.body.items.item;
+                    // console.log(items)
+                    const el = items.map(e => `
+                                                <div class="card text-center text-bg-primary mb-3" style="margin: 10px; width: 18rem;">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">서비스제공사명 : ${e.SRVC_PROV_NM}</li>
+                                                        <li class="list-group-item">설치장소 : ${e.INSTL_PLC_DTL}</li>
+                                                        <li class="list-group-item">도로명주소 : ${e.LCTN_LOTNO_ADDR}</li>
+                                                    </ul>
+                                                </div>
+                                              `).join('');
+                    document.querySelector('#wifi').innerHTML = el;
+                }
+            
+            
+            });
+        };
+    </script>
+    <br><br><br><br><br><br><br><br><br><br>
+    <hr>
+
+    <!--주유소 조회-->
+    <button onclick="prev();">이전</button>
+    <button onclick="next();">주유소 확인하기</button>
+    <div id="gas"></div>
+
+    <script>
+        let page1 = 1;
+        function next(){
+            page1++;
+            gas(page1);
+        };
+        function prev(){
+            if(page1 > 1){
+                page1--;
+                gas(page1);
+            }
+            
+        };
+
+        $(function(){
+            gas();
+        });
+        function gas(page){
+            if(!page) page = 1;
+            $.ajax({
+                url:'https://data.ex.co.kr/openapi/business/curStateStation?key=5163500668&type=json&numOfRows=10&pageNo=' + page,
+                success : e => {
+                    // console.log(e.list);
+                    const list = e.list;
+                    // console.log(list);
+                    const el = list.map(e => `<div>
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item list-group-item-dark">주유소 이름 : ${e.serviceAreaName}</li>
+                                                        <li class="list-group-item">주소 : ${e.svarAddr}</li>
+                                                        <li class="list-group-item">경유 : ${e.diselPrice}</li>
+                                                        <li class="list-group-item">휘발유 : ${e.gasolinePrice}</li>
+                                                        <li class="list-group-item">LPG : ${e.lpgPrice}</li>
+                                                        <li class="list-group-item">노선명 : ${e.routeName}</li>
+                                                    </ul>
+                                              </div>`).join('');
+                    document.querySelector('#gas').innerHTML = el;
+                }
+            });
+        }
+    </script>
+    <br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    
+    <button onclick="prev();">이전</button>
+    <button onclick="lib();">대구 북구 도서관 책 확인하기</button>
+    <div id="lib"></div>
+
+    <script>
+        function lib(){
+            $.ajax({
+                url:'https://apis.data.go.kr/3450000/lbryPrdclLstService_new/getLbryPrdclLst_v2?serviceKey=0683a518f80264d6ed4fb9185d5731cc8000a640948615a332afcb56c55176b9&currentPage=1&perPage=10',
+                success : e => {
+                    // console.log(e.body.items.item);
+                    const items = e.body.items.item;
+                    console.log(items)
+                }
+            });
+        }
+    </script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
