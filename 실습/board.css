@@ -1,0 +1,118 @@
+#content_1{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #5c5c5c;
+}
+
+#board_section{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+#board_title{
+    font-size: 12px;
+    font-weight: bold;
+    color: #3939ff;
+    border-bottom: 1px solid #bebebe;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+#board_list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#board_list li a{
+    font-size: 10px;
+    color: #bebebe;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#board_list li a:hover{
+    color: #3939ff;
+}
+#content_3{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 8px;
+    padding-left: 0;
+    overflow: hidden;
+    border-left: 1px solid #5c5c5c;
+}
+#content_3::before,
+#content_3::after{
+    content: '';
+    flex: 1;
+}
+
+#tag_section,
+#comment_section{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+#tag_title,
+#comment_title{
+    font-size: 12px;
+    font-weight: bold;
+    color: #3939ff;
+    border-bottom: 1px solid #bebebe;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+#tag_list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-left: 8px;
+}
+#tag_item{
+    font-size: 10px;
+    color: #1a1a1a;
+    background-color: #bebebe;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+#tag_item:hover{
+    background-color: #3939ff;
+}
+#comment_list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+#comment_list li a{
+    font-size: 10px;
+    color: #bebebe;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#comment_list li a:hover{
+    color: #3939ff;
+}
+
+#board_list li .badge{
+    font-size: 9px;
+    background-color: #3939ff;
+    color: #1a1a1a;
+    border-radius: 2px;
+    padding: 0 3px;
+    margin-right: 3px;
+}

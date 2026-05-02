@@ -1,0 +1,41 @@
+#content_2{
+    position: relative;
+}
+
+#title{
+    color: #bebebe;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 90px;
+}
+
+#imgContent_1{
+    border-top: 1px solid #5c5c5c;
+    width: 100%;
+    height: 330px;
+    position: absolute;
+    bottom: 0;
+}
+
+#imgContent_1>img{
+    height: 150px;
+    position: relative;
+    top: 30px;
+}
+
+#ato_1{
+    left: 5%;
+}
+
+#ato_doori{
+    left: 10%;
+}
+
+#mungchi_1{
+    left: 15%;
+}
+
+#mungchi_2{
+    left: 20%;
+}

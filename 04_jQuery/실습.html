@@ -127,6 +127,22 @@
                     // console.log(e.body.items.item);
                     const items = e.body.items.item;
                     console.log(items)
+                    const el = items.map(e => `
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div id="list-example" class="list-group">
+                                                        <a class="list-group-item list-group-item-action" href="#list-item-1">출판사 : ${e.ISU_OFFIC}</a>
+                                                        <a class="list-group-item list-group-item-action" href="#list-item-2">책 제목 : ${e.FDRM_PBLICTN_NM}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                                                        <h5 id="list-item-1">도서관 이름 : ${e.LBRRY_NM}</h5>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                              `).join('');
+                    document.querySelector("#lib").innerHTML = el;
                 }
             });
         }
